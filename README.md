@@ -45,8 +45,8 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 <td><img src="scotland_plain.jpg"  width="256" ></td>
 </tr>
 <tr>
-<td>input ref (I0)</td>
-<td>input target (I1)</td>
+<td>input ref</td>
+<td>input target</td>
 </tr>
 <tr>
 <td><img src="result_MKL.png"  width="256" ></td>
