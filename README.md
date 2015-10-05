@@ -40,7 +40,9 @@ IR_mkl = colour_transfer_MKL(I0, I1);
 
 
 | <img src="scotland_house.jpg"  width="256" > | <img src="scotland_plain.jpg"  width="256" > |
-| <img src="result_MKL.png"  width="256" > | <img src="result_IDT.png"  width="256" > |
+|  input ref  					 			   | input target								  |
+| <img src="result_MKL.png"  width="256" >     | <img src="result_IDT.png"  width="256" >     |
+|  Monge-Kantorovitch solution	 			   | IDT solution								  |
 
 
 
