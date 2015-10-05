@@ -39,3 +39,6 @@ IR_mkl = colour_transfer_MKL(I0, I1);
 ```
 
 
+| ------------- |:-------------:| -----:|
+| inputs      | ![I0](scotland_house.jpg) | ![I1](scotland_plain.jpg) |
+| results      | ![MKL solution](result_MKL.png) | ![IDT solution](result_IDT.png) |

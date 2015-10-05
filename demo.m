@@ -19,11 +19,16 @@ fprintf('load images\n');
 I0 = double(imread('scotland_house.jpg'))/255;
 I1 = double(imread('scotland_plain.jpg'))/255;
 
-fprintf('Colour Transfer (with a slow implementation) \n  ');
+fprintf('IDT Colour Transfer (with a slow implementation) \n');
 
-IR = colour_transfer_IDT(I0,I1,20);
+IR_idt = colour_transfer_IDT(I0,I1,20);
+
+fprintf('MKL Colour Transfer \n');
+
+IR_mkl = colour_transfer_MKL(I0,I1);
 
 figure; 
 subplot(2,2,1); imshow(I0); title('Original Image'); axis off
 subplot(2,2,2); imshow(I1); title('Target Palette'); axis off
-subplot(2,2,4); imshow(IR); title('Result After Colour Transfer'); axis off
+subplot(2,2,4); imshow(IR_idt); title('Result After IDT Colour Transfer'); axis off
+subplot(2,2,3); imshow(IR_mkl); title('Result After MKL Colour Transfer'); axis off
