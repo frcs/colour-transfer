@@ -18,7 +18,7 @@ Note that both pictures are copyrighted.
 send an email to fpitie@mee.tcd.ie if you want more information
 
 
-# Example
+## Example
 
 ```Matlab
 I0 = double(imread('scotland_house.jpg'))/255;
