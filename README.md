@@ -16,3 +16,14 @@ Note that both pictures are copyrighted.
 
 
 send an email to fpitie@mee.tcd.ie if you want more information
+
+
+# Example
+
+```Matlab
+I0 = double(imread('scotland_house.jpg'))/255;
+I1 = double(imread('scotland_plain.jpg'))/255;
+IR = colour_transfer_IDT(I0, I1, 20);
+```
+
+
