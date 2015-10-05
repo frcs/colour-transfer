@@ -39,6 +39,6 @@ IR_mkl = colour_transfer_MKL(I0, I1);
 ```
 
 
-![I0](scotland_house.jpg)       ![I1](scotland_plain.jpg)      
-![MKL solution](result_MKL.png) ![IDT solution](result_IDT.png) 
+<img src="scotland_house.jpg" align="left" width="256" > <img src="scotland_plain.jpg" align="right" width="256" >
+
 
