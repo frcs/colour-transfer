@@ -32,10 +32,10 @@ send an email to fpitie@mee.tcd.ie if you want more information
 ## Example
 
 ```Matlab
-I0 = double(imread('scotland_house.jpg'))/255;
-I1 = double(imread('scotland_plain.jpg'))/255;
-IR_idt = colour_transfer_IDT(I0, I1, 20); % [Pitie07a,Pitie05a,Pitie05b]
-IR_mkl = colour_transfer_MKL(I0, I1);     % [Pitie07b]
+I0 = double(imread('scotland_house.jpg'))/255;	 % reference image
+I1 = double(imread('scotland_plain.jpg'))/255;   % target palette
+IR_idt = colour_transfer_IDT(I0, I1, 20);        % [Pitie07a,Pitie05a,Pitie05b]
+IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 ```
 
 
