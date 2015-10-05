@@ -25,9 +25,10 @@ London, November.
 ```
 
 The grain reducer technique of [Pitie05b] and [Pitie07a] is not provided here.
-Note that both pictures are copyrighted.
+Note that both pictures are copyrighted but can be freely used for research
+purposes.
 
-send an email to fpitie@mee.tcd.ie if you want more information
+Send an email to fpitie@mee.tcd.ie if you want more information
 
 ## Example
 
