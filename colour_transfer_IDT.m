@@ -1,0 +1,45 @@
+%
+%   colour transfer algorithm based on N-Dimensional PDF Transfer 
+%
+%   [IR] = colour_transfer_IFT(I_original, I_target, nbiterations);
+%
+%  (c) F. Pitie 2007
+%
+%  see reference:
+%  Automated colour grading using colour distribution transfer. (2007) 
+%  Computer Vision and Image Understanding.
+%
+%  Attention: 
+%    * to remove the "grainyness" on the results, you should apply the grain 
+%    reducer proposed in the paper.
+%    * Also, the method could made a lot faster by first clustring colours.
+%
+function IR = colour_transfer_IDT(I0, I1, nbiterations)
+
+if (ndims(I0)~=3)
+    error('pictures must have 3 dimensions');
+end
+
+nb_channels = size(I0,3);
+
+%% reshape images as 3xN matrices
+for i=1:nb_channels
+    D0(i,:) = reshape(I0(:,:,i), 1, size(I0,1)*size(I0,2));
+    D1(i,:) = reshape(I1(:,:,i), 1, size(I1,1)*size(I1,2));
+end
+
+%% building a sequence of (almost) random projections
+
+R{1} = [1 0 0; 0 1 0; 0 0 1; 2/3 2/3 -1/3; 2/3 -1/3 2/3; -1/3 2/3 2/3];
+for i=2:nbiterations
+     R{i} = R{1} * orth(randn(3,3));
+end
+
+%% pdf transfer
+DR = pdf_transfer(D0, D1, R);
+
+%% reshape the resulting 3xN matrix as an image
+IR = I0;
+for i=1:nb_channels
+    IR(:,:,i) = reshape(DR(i,:), size(IR, 1), size(IR, 2));
+end
