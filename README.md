@@ -35,7 +35,7 @@ Send an email to fpitie@mee.tcd.ie if you want more information
 I0 = double(imread('scotland_house.png'))/255;	 % reference image
 I1 = double(imread('scotland_plain.png'))/255;   % target palette
 IR_idt = colour_transfer_IDT(I0, I1, 10);        % [Pitie07a,Pitie05a,Pitie05b]
-IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
+IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b] in RGB space
 IR_regrain = regrain(I0, IR_idt);     	   	     % [Pitie07a,Pitie05b]
 ```
 
@@ -63,7 +63,7 @@ Note that the IDT method uses random colour directions, hence results will diffe
 <td></td>
 </tr>
 <tr>
-<td>Linear Monge-Kantorovitch solution</td>
+<td>Linear Monge-Kantorovitch solution in RGB space</td>
 <td></td>
 </tr>
 </table>
