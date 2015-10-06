@@ -42,16 +42,16 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 
 <table style="width:100%">
 <tr>
-<td><img src="scotland_house.jpg"  width="256" ></td>
-<td><img src="scotland_plain.jpg"  width="256" ></td>
+<td><img src="scotland_house.jpg"  width="320" ></td>
+<td><img src="scotland_plain.jpg"  width="320" ></td>
 </tr>
 <tr>
 <td>input ref</td>
 <td>input target</td>
 </tr>
 <tr>
-<td><img src="result_MKL.png"  width="256" ></td>
-<td><img src="result_IDT.png"  width="256" ></td>
+<td><img src="result_MKL.png"  width="320" ></td>
+<td><img src="result_IDT.png"  width="320" ></td>
 </tr>
 <tr>
 <td>Linear Monge-Kantorovitch solution</td>
