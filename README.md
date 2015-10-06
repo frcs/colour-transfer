@@ -37,6 +37,7 @@ I0 = double(imread('scotland_house.png'))/255;	 % reference image
 I1 = double(imread('scotland_plain.png'))/255;   % target palette
 IR_idt = colour_transfer_IDT(I0, I1, 20);        % [Pitie07a,Pitie05a,Pitie05b]
 IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
+IR_regrain = regrain(I0, I1_idt);     	   	         % [Pitie07a,Pitie05b]
 ```
 
 <table style="width:100%">
@@ -49,12 +50,20 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 <td>input target</td>
 </tr>
 <tr>
-<td><img src="result_MKL.png"  width="320" ></td>
 <td><img src="result_IDT.png"  width="320" ></td>
+<td><img src="result_IDT_regrain.png"  width="320" ></td>
+</tr>
+<tr>
+<td>IDT Solution (10 iterations)</td>
+<td>IDT followed by regrain</td>
+</tr>
+<tr>
+<td><img src="result_MKL.png"  width="320" ></td>
+<td></td>
 </tr>
 <tr>
 <td>Linear Monge-Kantorovitch solution</td>
-<td>IDT Solution (10 iterations)</td>
+<td></td>
 </tr>
 </table>
 

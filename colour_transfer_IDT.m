@@ -1,18 +1,18 @@
 %
 %   colour transfer algorithm based on N-Dimensional PDF Transfer 
 %
-%   [IR] = colour_transfer_IFT(I_original, I_target, nb_iterations);
+%   IR = colour_transfer_IDT(I_original, I_target, nb_iterations);
 %
 %  (c) F. Pitie 2007
 %
 %  see reference:
-%  Automated colour grading using colour distribution transfer. (2007) 
-%  Computer Vision and Image Understanding.
+%     Automated colour grading using colour distribution transfer. (2007) 
+%     Computer Vision and Image Understanding.
 %
-%  Attention: 
-%    * to remove the "grainyness" on the results, you should apply the grain 
-%    reducer proposed in the paper.
-%    * Also, the method could be made a lot faster by clustering colours.
+%  To remove the "grainyness" on the results, you should apply the grain 
+%  reducer proposed in the paper and implemented in regrain.m:
+%
+%  IRR = regrain(I_original, IR);
 %
 function IR = colour_transfer_IDT(I0, I1, nb_iterations)
 

@@ -83,18 +83,24 @@ end
 function f = pdf_transfer1D(pX,pY)
     nbins = max(size(pX));
 
-    PX = cumsum(pX);
+    eps = 1e-6;
+    PX = cumsum(pX + eps);
     PX = PX/PX(end);
 
-    PY = cumsum(pY);
+    PY = cumsum(pY + eps);
     PY = PY/PY(end);
 
     % inversion
-    small_damping = (0:nbins+1)/nbins*1e-3;
-    PX = [0 PX nbins] + small_damping;
-    PY = [0 PY nbins] + small_damping;
 
-    f = interp1(PY, [0 ((0:nbins-1)+1e-16) (nbins+1e-10)], PX,'linear');
-    f = f(2:end-1);
+    %PX = [0 PX nbins] + small_damping;
+    %PY = [0 PY nbins] + small_damping;
+
+    f = interp1(PY, 0:nbins-1, PX, 'linear');
+    f(PX<=PY(1)) = 0;
+    f(PX>=PY(end)) = nbins-1;
+    if sum(isnan(f))>0
+        error('colour_transfer:pdf_transfer:NaN', ...
+              'pdf_transfer has generated NaN values');
+    end   
 end
 

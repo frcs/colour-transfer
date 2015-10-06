@@ -1,13 +1,12 @@
 %
 %   colour transfer algorithm based on linear Monge-Kantorovitch solution 
 %
-%   [IR] = colour_transfer_MKL(I_original, I_target, nbiterations);
+%   IR = colour_transfer_MKL(I_original, I_target, nbiterations);
 %
 %  (c) F. Pitie 2007
 %
 %  see reference:
 %
-%  Attention: 
 %
 function IR = colour_transfer_MKL(I0, I1)
 
