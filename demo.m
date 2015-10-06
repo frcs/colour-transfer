@@ -16,19 +16,22 @@
 
 fprintf('load images\n');
 
-I0 = double(imread('scotland_house.jpg'))/255;
-I1 = double(imread('scotland_plain.jpg'))/255;
-
-fprintf('IDT Colour Transfer (with a slow implementation) \n');
-
-IR_idt = colour_transfer_IDT(I0,I1,20);
+I0 = double(imread('scotland_house.png'))/255;
+I1 = double(imread('scotland_plain.png'))/255;
 
 fprintf('MKL Colour Transfer \n');
 
 IR_mkl = colour_transfer_MKL(I0,I1);
 
+fprintf('IDT Colour Transfer (with a slow implementation) \n');
+
+IR_idt = colour_transfer_IDT(I0,I1,10);
+IR_idt_regrain = regrain(I0,IR_idt);
+
+
 figure; 
-subplot(2,2,1); imshow(I0); title('Original Image'); axis off
-subplot(2,2,2); imshow(I1); title('Target Palette'); axis off
-subplot(2,2,4); imshow(IR_idt); title('Result After IDT Colour Transfer'); axis off
-subplot(2,2,3); imshow(IR_mkl); title('Result After MKL Colour Transfer'); axis off
+subplot(2,3,1); imshow(I0); title('Original Image'); axis off
+subplot(2,3,2); imshow(I1); title('Target Palette'); axis off
+subplot(2,3,4); imshow(IR_mkl); title('Result After MKL Colour Transfer'); axis off
+subplot(2,3,5); imshow(IR_idt); title('Result After IDT Colour Transfer'); axis off
+subplot(2,3,6); imshow(IR_idt_regrain); title('After IDT and Regrain'); axis off
