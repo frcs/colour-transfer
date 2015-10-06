@@ -33,8 +33,8 @@ Send an email to fpitie@mee.tcd.ie if you want more information
 ## Example
 
 ```Matlab
-I0 = double(imread('scotland_house.jpg'))/255;	 % reference image
-I1 = double(imread('scotland_plain.jpg'))/255;   % target palette
+I0 = double(imread('scotland_house.png'))/255;	 % reference image
+I1 = double(imread('scotland_plain.png'))/255;   % target palette
 IR_idt = colour_transfer_IDT(I0, I1, 20);        % [Pitie07a,Pitie05a,Pitie05b]
 IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 ```
@@ -42,8 +42,8 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 
 <table style="width:100%">
 <tr>
-<td><img src="scotland_house.jpg"  width="320" ></td>
-<td><img src="scotland_plain.jpg"  width="320" ></td>
+<td><img src="scotland_house.png"  width="320" ></td>
+<td><img src="scotland_plain.png"  width="320" ></td>
 </tr>
 <tr>
 <td>input ref</td>

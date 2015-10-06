@@ -17,13 +17,20 @@
 %  Automated colour grading using colour distribution transfer. (2007) 
 %  Computer Vision and Image Understanding.
 %
-function [DR] = pdf_transferND(D0, D1, Rotations)
+function [DR] = pdf_transferND(D0, D1, Rotations, varargin)
 
 nb_dims = size(D0,1);
 nb_iterations = length(Rotations);
 
-relaxation = 1;
-DR = D0;
+numvarargs = length(varargin);
+if numvarargs > 1
+    error('pdf_transfer:TooManyInputs', ...
+        'requires at most 1 optional input');
+end
+
+optargs = {1};
+optargs(1:numvarargs) = varargin;
+[relaxation] = optargs{:};
 
 verb = '';
 
@@ -60,7 +67,7 @@ for it=1:nb_iterations
         D0R_(i,:) = interp1(0:length(f{i})-1, f{i}', (D0R(i,:) - datamin(i))*scale)/scale + datamin(i);
     end
 
-    D0 = relaxation * R \ (D0R_ - D0R) + D0;
+    D0 = relaxation * (R \ (D0R_ - D0R)) + D0;
 end
 
 fprintf(repmat('\b',[1, length(verb)]))
@@ -69,9 +76,10 @@ fprintf(repmat('\b',[1, length(verb)]))
 DR = D0;
 
 end
-%% 
-%% 1D - PDF Transfer
+
 %%
+% 1D - PDF Transfer
+%
 function f = pdf_transfer1D(pX,pY)
     nbins = max(size(pX));
 

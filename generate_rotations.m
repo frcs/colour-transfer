@@ -7,13 +7,13 @@
 % for the IDT pdf transfer algorithm
 % although the code is not beautiful, it does the job.
 %
-function rotations = find_all(ndim, NbRotations)
+function rotations = generate_rotations(ndim, NbRotations)
 
 if (ndim == 2)
     l = [0 pi/2];
 elseif (ndim == 3)
     l = [0 0 pi/2 0 pi/2 pi/2];
-else % put here initialisation stuff for higher orders
+else % put here initialisation for higher orders
 end
 
 fprintf('rotation ');
