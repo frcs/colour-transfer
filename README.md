@@ -24,7 +24,6 @@ Conference on Visual Media Production (CVMP'07).
 London, November.
 ```
 
-The grain reducer technique of [Pitie05b] and [Pitie07a] is not provided here.
 Note that both pictures are copyrighted but can be freely used for research
 purposes.
 
@@ -40,7 +39,7 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 IR_regrain = regrain(I0, IR_idt);     	   	     % [Pitie07a,Pitie05b]
 ```
 
-Note that the IDT method uses random colour directions, hence results will differ from the results published here (`result_IDT.png`).
+Note that the IDT method uses random colour directions, hence results will differ from the results published here in `result_IDT.png`.
 
 <table style="width:100%">
 <tr>
