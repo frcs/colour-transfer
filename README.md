@@ -39,7 +39,6 @@ IR_idt = colour_transfer_IDT(I0, I1, 20);        % [Pitie07a,Pitie05a,Pitie05b]
 IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 ```
 
-
 <table style="width:100%">
 <tr>
 <td><img src="scotland_house.png"  width="320" ></td>
@@ -55,7 +54,7 @@ IR_mkl = colour_transfer_MKL(I0, I1);     	   	 % [Pitie07b]
 </tr>
 <tr>
 <td>Linear Monge-Kantorovitch solution</td>
-<td>IDT Solution</td>
+<td>IDT Solution (10 iterations)</td>
 </tr>
 </table>
 
