@@ -26,7 +26,7 @@ F. Pitié, A. Kokaram and R. Dahyot (2008). Single-Sensor Imaging. Sep 2008,
 295 -321
 ```
 
-Pictures on this webpage are released free of copyrights. Please cite our publications when using our code and pictures.
+Pictures on this webpage are released free of copyrights. Please cite our publications when using our code and pictures ([bib](colour_transfer.bib)).
 
 Send an email to fpitie@mee.tcd.ie if you want more information
 
