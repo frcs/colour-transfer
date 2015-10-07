@@ -77,8 +77,6 @@ for i=1:nbits
     IRR = num./repmat(den + eps, [1 1 K]) .* (1-rho) + rho.*IRR;
 end
 
-figure; imshow(IRR)
-
 end
 
 function [IRR] = regrain_rec(IRR, I0, IR, nbits, smoothness, level)
