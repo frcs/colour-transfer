@@ -24,8 +24,7 @@ Conference on Visual Media Production (CVMP'07).
 London, November.
 ```
 
-Note that both pictures are copyrighted but can be freely used for research
-purposes.
+Pictures on this webpage are released free of copyrights. Please cite our publications when using our code and pictures.
 
 Send an email to fpitie@mee.tcd.ie if you want more information
 

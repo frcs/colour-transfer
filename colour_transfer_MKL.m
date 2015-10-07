@@ -31,10 +31,16 @@ IR = reshape(XR, size(I0));
 
 function [T] = MKL(A, B)
 N = size(A,1);
-[Ua,Da2] = eigs(A, N); Da = sqrt(Da2);
+[Ua,Da2] = eig(A); 
+Da2 = diag(Da2); 
+Da2(Da2<0) = 0;
+Da = diag(sqrt(Da2 + eps));
 C = Da*Ua'*B*Ua*Da;
-[Uc,Dc2] = eigs(C, N); Dc = sqrt(Dc2);
-Da_inv = diag(1./diag(Da));
+[Uc,Dc2] = eig(C); 
+Dc2 = diag(Dc2);
+Dc2(Dc2<0) = 0;
+Dc = diag(sqrt(Dc2 + eps));
+Da_inv = diag(1./(diag(Da)));
 T = Ua*Da_inv*Uc*Dc*Uc'*Da_inv*Ua';
 
 
