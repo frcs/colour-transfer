@@ -22,6 +22,8 @@ for example-based colour transfer.
 F. Pitié and A. Kokaram (2007) In 4th IEE European
 Conference on Visual Media Production (CVMP'07).
 London, November.
+
+[Pitie08] Enhancement of Digital Photographs Using Color Transfer Techniques. F. Pitié, A. Kokaram and R. Dahyot (2008). Single-Sensor Imaging. Sep 2008, 295 -321
 ```
 
 Pictures on this webpage are released free of copyrights. Please cite our publications when using our code and pictures.
