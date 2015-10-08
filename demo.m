@@ -14,24 +14,46 @@
 %
 % send an email to fpitie@mee.tcd.ie if you want more information
 
-fprintf('load images\n');
+fprintf('  colour transfer demo \n');
+
+fprintf('  ... load images\n');
 
 I0 = double(imread('scotland_house.png'))/255;
 I1 = double(imread('scotland_plain.png'))/255;
 
-fprintf('MKL Colour Transfer \n');
+fprintf('  ... MKL Colour Transfer \n');
 
 IR_mkl = colour_transfer_MKL(I0,I1);
 
-fprintf('IDT Colour Transfer (with a slow implementation) \n');
 
+fprintf('  ... seed the random number generator\n');
+rng(0);
+
+fprintf('  ... IDT Colour Transfer (slow implementation) \n');
 IR_idt = colour_transfer_IDT(I0,I1,10);
+
+fprintf('  ... regrain post-processing on IDT results \n');
 IR_idt_regrain = regrain(I0,IR_idt);
 
+fprintf('  ... [ok] \n');
 
-figure; 
-subplot(2,3,1); imshow(I0); title('Original Image'); axis off
-subplot(2,3,2); imshow(I1); title('Target Palette'); axis off
-subplot(2,3,4); imshow(IR_mkl); title('Result After MKL Colour Transfer'); axis off
-subplot(2,3,5); imshow(IR_idt); title('Result After IDT Colour Transfer'); axis off
-subplot(2,3,6); imshow(IR_idt_regrain); title('After IDT and Regrain'); axis off
+screensize = get(0,'ScreenSize');
+sz = [576, 1024];
+figure('Position', [ ceil((screensize(3)-sz(2))/2), ceil((screensize(4)-sz(1))/2), sz(2), sz(1)]);
+subplot('Position',[0.01  0.4850 0.3200 .47]); 
+imshow(I0); title('Original Image'); 
+
+subplot('Position',[0.3400  0.4850 0.3200 .47]); 
+imshow(I1); title('Target Palette'); 
+
+subplot('Position',[0.01 0.01 0.3200 .47]); 
+imshow(IR_mkl); title('Result After MKL Colour Transfer [Pitie07b]'); 
+
+subplot('Position',[0.3400 0.01 0.3200 .47]);  
+imshow(IR_idt); title('Result After IDT Colour Transfer [Pitie05a,Pitie05b,Pitie07a]'); 
+
+subplot('Position',[0.6700 0.01 0.3200 .47]); 
+imshow(IR_idt_regrain); title('After IDT and Regrain [Pitie05b,Pitie07a]'); 
+
+
+
